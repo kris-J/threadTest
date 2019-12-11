@@ -1,3 +1,5 @@
+import java.lang.ref.WeakReference;
+
 /**
  * @author fangjie
  * @Description: ${todo}
