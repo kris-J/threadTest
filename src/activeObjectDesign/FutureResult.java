@@ -2,7 +2,7 @@ package activeObjectDesign;
 
 /**
  * @author fangjie
- * @Description: ${todo}
+ * @Description: future模式
  * @date 2019/12/18 16:03
  */
 public class FutureResult implements Result {
