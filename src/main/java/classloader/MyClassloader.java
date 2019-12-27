@@ -13,7 +13,7 @@ public class MyClassloader extends ClassLoader {
 
     private String classloaderName;
 
-    private String DIR = "C:\\workspace\\IDEA\\threadTest\\classloaderPath";//System.getProperty("user.dir");
+    private String DIR = System.getProperty("user.dir") + "\\classloaderPath";
 
     public MyClassloader() {
         super();
