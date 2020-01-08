@@ -14,7 +14,12 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ConditionExample2 {
 
     private final static Lock LOCK = new ReentrantLock();
-
+    /**
+     * 多个condition控制不同的等待队列
+     * 如果使用一个condition，则生产、消费者线程都存在于一个等待队列中
+     * 如果一个生产者线程进行signal唤醒并且此时DATA共享数据已达到上限
+     * 可能会有另外一个生产者线程被唤醒，发现共现数据达到上限，从而又一次进入等待队列，而浪费了一次资源
+     */
     private final static Condition PRODUCE_CONDITION = LOCK.newCondition();
     private final static Condition CONSUME_CONDITION = LOCK.newCondition();
     private static LinkedList<Long> DATA = new LinkedList();
