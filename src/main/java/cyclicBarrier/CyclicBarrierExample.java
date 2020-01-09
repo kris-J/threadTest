@@ -48,7 +48,7 @@ public class CyclicBarrierExample {
                 }
             }
         }.start();
-
+        //main线程也加入到cyclicBarrier
         cyclicBarrier.await();
         System.out.println("main wait finished");
     }
