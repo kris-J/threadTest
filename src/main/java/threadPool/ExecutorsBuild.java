@@ -1,7 +1,6 @@
 package threadPool;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * @author fangjie
@@ -12,6 +11,16 @@ public class ExecutorsBuild {
 
     public static void main(String[] args) {
 
+    }
+
+    /**
+     * new FinalizableDelegatedExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>()))
+     *
+     * 一个单线程的线程池，相当于串行执行任务，如果异常则会创建新的线程替代
+     */
+    private static void scheduledThreadExecutor(){
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
+        executorService.schedule(()->{},10, TimeUnit.SECONDS);
     }
 
     /**
